@@ -1,0 +1,25 @@
+
+services:
+  autenticacion:
+    build:
+      context: ./autenticacion
+    ports:
+      - "3001:3001"
+  
+  carrito:
+    build:
+      context: ./carrito
+    ports:
+      - "3003:3003"
+  
+  productos:
+    build:
+      context: ./productos
+    ports:
+      - "3002:3002"
+  
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"

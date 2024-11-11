@@ -1,18 +1,20 @@
-# Usa la imagen base de Node.js
-FROM node:14
+# Usa una imagen oficial de Node.js como base
+FROM node:16
 
-# Crea y establece el directorio de trabajo
+# Crea un directorio de trabajo
 WORKDIR /app
 
-# Copia los archivos de dependencias y luego instala las dependencias
+# Copia el archivo package.json y package-lock.json
 COPY package*.json ./
+
+# Instala las dependencias
 RUN npm install
 
-# Copia el resto de los archivos de tu aplicación
+# Copia todo el código de la aplicación al contenedor
 COPY . .
 
-# Expone el puerto que usará tu servidor (3000 en este caso)
+# Expone el puerto en el que la app corre (ajusta si usas otro puerto)
 EXPOSE 3000
 
-# Define el comando para iniciar la aplicación
-CMD ["node", "server.js"] 
+# Comando para iniciar la aplicación
+CMD ["npm", "start"]

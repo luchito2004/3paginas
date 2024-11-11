@@ -1,5 +1,15 @@
 {
+  "name": "3paginas",
+  "version": "1.0.0",
+  "main": "autenticacion.html", 
+  "scripts": {
+    "start": "docker-compose up",
+    "build": "docker-compose build",
+    "up": "docker-compose up -d",
+    "down": "docker-compose down"
+  },
   "dependencies": {
-    "mysql2": "^3.11.4"
-  }
+    "docker-compose": "^1.0.0"
+  },
+  "devDependencies": {}
 }

@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   autenticacion:
@@ -6,25 +5,19 @@ services:
       context: ./autenticacion
     ports:
       - "3001:3001"
-    depends_on:
-      - backend  # Asegura que el backend esté disponible primero
-
+  
   carrito:
     build:
       context: ./carrito
     ports:
       - "3003:3003"
-    depends_on:
-      - backend
-
+  
   productos:
     build:
       context: ./productos
     ports:
       - "3002:3002"
-    depends_on:
-      - backend
-
+  
   backend:
     build:
       context: ./backend

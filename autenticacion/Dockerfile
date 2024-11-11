@@ -1,20 +1,17 @@
-# Usamos la imagen base de Node.js
-FROM node:14
+# Usa una imagen base oficial de Node.js
+FROM node:16
 
-# Establecer el directorio de trabajo dentro del contenedor
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar el package.json y el package-lock.json (si existe)
-COPY package*.json ./
-
-# Instalar las dependencias
-RUN npm install
-
-# Copiar el resto de los archivos de autenticación al contenedor
+# Copia los archivos del proyecto al contenedor
 COPY . .
 
-# Exponer el puerto 3001
+# Instala las dependencias
+RUN npm install
+
+# Expón el puerto en el que se ejecutará el servicio
 EXPOSE 3001
 
-# Comando para iniciar el servidor
-CMD ["node", "app.js"]
+# Define el comando para iniciar la aplicación
+CMD ["npm", "start"]

@@ -1,15 +1,12 @@
 {
-  "name": "3paginas",
+  "name": "autenticacion",
   "version": "1.0.0",
-  "main": "autenticacion.html", 
+  "description": "Servicio de autenticación",
+  "main": "autenticacion.html",
   "scripts": {
-    "start": "autenticacion.html",
-    "build": "docker-compose build",
-    "up": "docker-compose up -d",
-    "down": "docker-compose down"
+    "start": "node app.js"
   },
   "dependencies": {
-    "docker-compose": "^1.0.0"
-  },
-  "devDependencies": {}
+    "express": "^4.17.1"
+  }
 }

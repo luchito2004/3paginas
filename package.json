@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "autenticacion.html", 
   "scripts": {
-    "start": "docker-compose up",
+    "start": "autenticacion.html",
     "build": "docker-compose build",
     "up": "docker-compose up -d",
     "down": "docker-compose down"

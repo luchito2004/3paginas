@@ -1,12 +1,12 @@
 {
   "name": "autenticacion",
   "version": "1.0.0",
-  "description": "Servicio de autenticación",
-  "main": "autenticacion.html",
+  "description": "Servicio de autenticacion",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.21.1"
   }
 }

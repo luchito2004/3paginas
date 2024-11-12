@@ -1,25 +1,59 @@
+version: '3.8'
 
 services:
   autenticacion:
+    image: autenticacion-image
     build:
       context: ./autenticacion
     ports:
       - "3001:3001"
-  
-  carrito:
-    build:
-      context: ./carrito
-    ports:
-      - "3003:3003"
-  
+    environment:
+      - PORT=3001
+      - WEBSITES_PORT=3001  # Configura el puerto que Azure App Service debe exponer
+    depends_on:
+      - db  # Si tienes un servicio de base de datos
+
   productos:
+    image: productos-image
     build:
       context: ./productos
     ports:
       - "3002:3002"
-  
-  backend:
+    environment:
+      - PORT=3002
+
+  carrito:
+    image: carrito-image
     build:
-      context: ./backend
+      context: ./carrito
     ports:
-      - "3000:3000"
+      - "3003:3003"
+    environment:
+      - PORT=3003
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: examplepassword
+      MYSQL_DATABASE: 3paginasdb
+      MYSQL_USER: adminlu
+      MYSQL_PASSWORD: Lucho12345
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  db-data:
+
+
+
+
+
+
+
+
+
+
+
+                  

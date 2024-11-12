@@ -11,7 +11,7 @@ services:
       - PORT=3001
       - WEBSITES_PORT=3001  # Configura el puerto que Azure App Service debe exponer
     depends_on:
-      - db  # Si tienes un servicio de base de datos
+      - db  
 
   productos:
     image: productos-image
